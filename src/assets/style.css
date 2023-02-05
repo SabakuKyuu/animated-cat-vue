@@ -1,0 +1,356 @@
+body {
+	background-image: url('../media/background.webp');
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	height: 600px;
+	width: 600px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 30%;
+	top: 75%;
+}
+
+.head {
+	background-color: rgb(35, 35, 35);
+	height: 150px;
+	width: 150px;
+	border-radius: 90px 90px 70px 70px;
+	position: absolute;
+	bottom: 260px;
+	right: 200px;
+}
+
+.ear {
+	height: 60px;
+	width: 40px;
+	background-color: rgb(35, 35, 35);
+	position: absolute;
+	bottom: 115px;
+}
+
+.ear--left {
+	left: -1%;
+	border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
+	transform: rotate(-20deg);
+}
+
+.ear--right {
+	right: -1%;
+	border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
+	transform: rotate(20deg);
+}
+
+.nose-up {
+	height: 20px;
+	width: 30px;
+	background-color: rgb(119, 42, 61);
+	position: absolute;
+	bottom: 50px;
+	right: 55px;
+	border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+}
+
+.nose-down {
+	height: 30px;
+	width: 30px;
+	background-color: rgb(65, 65, 65);
+	position: absolute;
+	bottom: 30px;
+	right: 65px;
+	box-shadow: 20px 0 rgb(65, 65, 65);
+	border-radius: 50%;
+}
+
+.mouth {
+	height: 15px;
+	width: 20px;
+	background-color: rgb(207, 2, 2);
+	position: absolute;
+	bottom: 20px;
+	right: 60px;
+	border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+}
+
+.eye {
+	height: 40px;
+	width: 40px;
+	background-color: rgb(248, 248, 248);
+	position: absolute;
+	bottom: 75px;
+	animation: eye-blink 2s infinite 3.5s;
+}
+
+.eye--left {
+	left: 28px;
+	border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
+}
+
+.eye--right {
+	right: 24px;
+	border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
+}
+
+.eye--inside {
+	height: 30px;
+	width: 30px;
+	background-color: rgb(0, 0, 0);
+	position: absolute;
+	bottom: 75px;
+	right: 88px;
+	border-radius: 50%;
+	box-shadow: 60px 0 rgb(0, 0, 0);
+}
+
+@keyframes eye-blink {
+	0% {
+		transform: scaleY(1);
+	}
+
+	18% {
+		transform: scaleY(1);
+	}
+
+	20% {
+		transform: scaleY(0);
+	}
+
+	38% {
+		transform: scaleY(1);
+	}
+
+	45% {
+		transform: scaleY(1);
+	}
+
+	80% {
+		transform: scaleY(1);
+	}
+}
+
+.mustache {
+	height: 2px;
+	width: 35px;
+	position: absolute;
+	background-color: rgb(0, 0, 0);
+	box-shadow: 0 10px rgb(0, 0, 0), 0 20px rgb(0, 0, 0);
+}
+
+.mustache--left {
+	bottom: 55px;
+	right: 85px;
+	transform: rotate(10deg);
+}
+
+.mustache--right {
+	bottom: 55px;
+	right: 20px;
+	transform: rotate(-10deg);
+}
+
+.body {
+	background-color: rgb(35, 35, 35);
+	height: 150px;
+	width: 190px;
+	border-radius: 90px 90px 70px 70px;
+	position: absolute;
+	bottom: 120px;
+	right: 230px;
+	border-radius: 110px 40px 40px 20px;
+	animation: body-moving 2s infinite;
+	transform-origin: bottom;
+}
+
+@keyframes body-moving {
+	60% {
+		transform: scale(0.9, 1.05);
+	}
+}
+
+.paw {
+	height: 40px;
+	width: 40px;
+	background-color: rgb(65, 65, 65);
+	position: absolute;
+	bottom: 1px;
+}
+
+.paw--left {
+	left: 75px;
+	border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
+	transform: rotate(105deg);
+}
+
+.paw--right {
+	right: 24px;
+	border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
+	transform: rotate(-100deg);
+}
+
+.tail {
+	width: 75px;
+	height: 140px;
+	position: absolute;
+	left: -60px;
+	bottom: 20px;
+	border-radius: 200px;
+	box-shadow: inset 15px 20px 0px rgb(35, 35, 35);
+	transform: rotate(235deg);
+	animation: wave 3s infinite;
+}
+
+@keyframes wave {
+	50% {
+		transform-origin: 50px 50px;
+	}
+}
+
+.heart {
+	background-color: red;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	left: 120px;
+	bottom: -30px;
+	position: relative;
+	transform: rotate(-45deg);
+	animation: heart 0.6s linear infinite;
+}
+
+@keyframes heart {
+	0% {
+		transform: rotate(-45deg) scale(1.1);
+	}
+	80% {
+		transform: rotate(-45deg) scale(1);
+	}
+	100% {
+		transform: rotate(-45deg) scale(0.7);
+	}
+}
+
+.heart:before,
+.heart:after {
+	content: '';
+	background-color: red;
+	border-radius: 50%;
+	height: 30px;
+	position: absolute;
+	width: 30px;
+}
+
+.heart:before {
+	top: -15px;
+	left: 0;
+}
+
+.heart:after {
+	left: 15px;
+	top: 0;
+}
+
+.cloud {
+	background-color: rgb(255, 255, 255);
+	height: 150px;
+	width: 150px;
+	border-radius: 50px 50px 50px 5px;
+	position: absolute;
+	bottom: 350px;
+	right: 30px;
+	text-align: center;
+	animation: cloud-move 2s infinite;
+}
+
+@keyframes cloud-move {
+	50% {
+		transform: scale(1.2);
+	}
+}
+
+.cloud-word {
+	animation: color-animation 4s linear infinite;
+}
+
+.cloud-word-1 {
+	--color-1: #df8453;
+	--color-2: #3d8dae;
+	--color-3: #e4a9a8;
+}
+
+.cloud-word-2 {
+	--color-1: #dbad4a;
+	--color-2: #accfcb;
+	--color-3: #17494d;
+}
+
+.cloud-word-3 {
+	--color-1: #accfcb;
+	--color-2: #e4a9a8;
+	--color-3: #accfcb;
+}
+
+.cloud-word-4 {
+	--color-1: #3d8dae;
+	--color-2: #df8453;
+	--color-3: #e4a9a8;
+}
+
+@keyframes color-animation {
+	0% {
+		color: var(--color-1);
+	}
+	32% {
+		color: var(--color-1);
+	}
+	33% {
+		color: var(--color-2);
+	}
+	65% {
+		color: var(--color-2);
+	}
+	66% {
+		color: var(--color-3);
+	}
+	99% {
+		color: var(--color-3);
+	}
+	100% {
+		color: var(--color-1);
+	}
+}
+
+.ball {
+	background-color: rgb(8, 11, 201);
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	position: relative;
+	bottom: -130px;
+	right: -130px;
+	animation: bouncing 3s infinite;
+}
+
+@keyframes bouncing {
+	10% {
+		height: 50px;
+		width: 50px;
+	}
+	30% {
+		height: 50px;
+		width: 40px;
+	}
+	50% {
+		height: 30px;
+		width: 55px;
+		transform: translateY(240px);
+	}
+	75% {
+		height: 50px;
+		width: 55px;
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
